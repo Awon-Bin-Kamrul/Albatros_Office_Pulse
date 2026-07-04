@@ -18,7 +18,8 @@ Demo Video
 Watch our 3-minute demo video to see Office Pulse in action:
 
 
-🔗 Link to Office Pulse Demo Video (Drive Link)Project Overview
+🔗 Link to Office Pulse Demo Video 
+https://drive.google.com/drive/folders/1wwcdFNymNAJQDWpNSRzUPkFfk0mIvtV2
 
 
 Modern offices often suffer from significant energy waste due to lights, fans, and other devices being left on after hours or in unoccupied rooms. Office Pulse provides a smart, scalable solution to this problem. Our system remotely monitors office device status and power consumption in real-time, allowing for automated alerts and remote management.
@@ -50,7 +51,7 @@ We use Wokwi for hardware validation, allowing us to simulate the physical setup
 
 
 🔗 Link to Wokwi Simulation: Office Pulse
-
+https://wokwi.com/projects/468604243748749313
 
 Simulation Setup:
 Microcontroller: ESP32 DevKit V1
