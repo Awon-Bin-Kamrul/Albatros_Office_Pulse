@@ -69,16 +69,17 @@ Frontend: React 19, TanStack Start (full-stack framework), Tailwind CSS.
 Database: PostgreSQL (with real-time subscriptions enabled).
 Alerts: Discord API (Edge functions trigger bot messages).
 👨‍💻 Team Members - Albatros
-Member Name
-Role
-Contact
-Awon Bin Kamrul (Leader)
-Hardware & Wokwi Lead, GitHub Control & Versioning, Voice over
-awonbinkamrul0@gmail.com
-Abdullah Al-Zahur Rafi
+
+
+Member Name: Awon Bin Kamrul (Leader)
+Role: Hardware & Wokwi Lead, GitHub Control & Versioning, Voice over
+Contact: awonbinkamrul0@gmail.com
+
+Member Name: Abdullah Al-Zahur Rafi
 Backend & Database Architect
 abdullah.alzahur.rafi@g.bracu.ac.bd
-Mahmudul Islam Sohan
+
+Member Name: Mahmudul Islam Sohan
 Frontend & UI/UX Lead
 mahmudul.islam.sohan@g.bracu.ac.bd
 
