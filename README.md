@@ -14,6 +14,7 @@ A real-time, IoT-based office environment monitoring and automation system desig
 - [Tech Stack](#-tech-stack)
 - [Team Members](#-team-members)
 - [License](#-license)
+- [Academic Affiliation](#-academic-affiliation)
 
 ---
 
@@ -44,7 +45,8 @@ Modern offices often suffer from significant energy waste due to lights, fans, a
 ## 🏗️ System Architecture
 The Office Pulse system is built on a robust, event-driven architecture that ensures seamless communication between hardware and the user interface.
 
-[System Architecture Diagram](https://drive.google.com/drive/folders/1a4KDCPGbuNs9XeBt8IUy7LqdqIqRwOSi?usp=sharing)
+
+🔗 [System Architecture Diagram](https://drive.google.com/drive/folders/1a4KDCPGbuNs9XeBt8IUy7LqdqIqRwOSi?usp=sharing)
 
 **The data flow is as follows:**
 1. **IoT Hardware Node (Wokwi):** Simulates office appliances (LEDs and Relays) using an ESP32. It posts state updates to the cloud.
@@ -72,8 +74,25 @@ We use Wokwi for hardware validation, allowing us to simulate the physical setup
 
 ---
 
-## 👥 Team Members
-* [Add Team Member Names Here]
+## 👥 Team Members - Albatros
+* **Awon Bin Kamrul (Leader)**
+  * Role: Hardware & Wokwi Lead, GitHub Control & Versioning, Voice over
+  * Contact: [awonbinkamrul0@gmail.com](mailto:awonbinkamrul0@gmail.com)
+
+* **Abdullah Al-Zahur Rafi**
+  * Role: Backend & Database Architect
+  * Contact: [abdullah.alzahur.rafi@g.bracu.ac.bd](mailto:abdullah.alzahur.rafi@g.bracu.ac.bd)
+
+* **Mahmudul Islam Sohan**
+  * Role: Frontend & UI/UX Lead
+  * Contact: [mahmudul.islam.sohan@g.bracu.ac.bd](mailto:mahmudul.islam.sohan@g.bracu.ac.bd)
+
+---
 
 ## 📜 License
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+---
+
+## 🎓 Academic Affiliation
+**BRAC University** Presented for the Hackathon at **Techathon Nationals & Rover Summit 2026**, organized by the **IUT Robotics Society**.
