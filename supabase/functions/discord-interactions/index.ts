@@ -1,9 +1,35 @@
+/// <reference path="../global.d.ts" />
+
 // Discord Interactions Endpoint for Office Pulse.
 // - Verifies Ed25519 signature with DISCORD_PUBLIC_KEY
 // - Handles PING and /status, /room, /usage slash commands.
 
 import nacl from "https://esm.sh/tweetnacl@1.0.3";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+type DeviceRow = {
+  room: string;
+  type: "fan" | "light";
+  status: boolean;
+  power_watts: number;
+};
+
+type ActiveDeviceRow = {
+  power_watts: number;
+  status: boolean;
+};
+
+type PowerLogRow = {
+  total_watts: number;
+};
+
+type InteractionBody = {
+  type: number;
+  data?: {
+    name?: string;
+    options?: Array<{ name: string; value?: string }>;
+  };
+};
 
 const PUBLIC_KEY = Deno.env.get("DISCORD_PUBLIC_KEY") ?? "";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
@@ -42,9 +68,10 @@ async function roomSummary(roomFilter?: string) {
   const rooms = roomFilter ? [roomFilter] : ["drawing_room", "work_room_1", "work_room_2"];
   const parts: string[] = [];
   for (const r of rooms) {
-    const devs = data.filter((d) => d.room === r);
-    const fansOn = devs.filter((d) => d.type === "fan" && d.status).length;
-    const lightsOn = devs.filter((d) => d.type === "light" && d.status).length;
+    const devs = data as DeviceRow[];
+    const roomDevices = devs.filter((d: DeviceRow) => d.room === r);
+    const fansOn = roomDevices.filter((d: DeviceRow) => d.type === "fan" && d.status).length;
+    const lightsOn = roomDevices.filter((d: DeviceRow) => d.type === "light" && d.status).length;
     if (fansOn === 0 && lightsOn === 0) {
       parts.push(`${prettyRoom(r)}: all off.`);
     } else {
@@ -62,7 +89,10 @@ async function usageSummary() {
     .from("devices")
     .select("power_watts,status")
     .eq("status", true);
-  const currentW = (devs ?? []).reduce((s, d) => s + Number(d.power_watts), 0);
+  const currentW = ((devs ?? []) as ActiveDeviceRow[]).reduce(
+    (s: number, d: ActiveDeviceRow) => s + Number(d.power_watts),
+    0,
+  );
 
   const startOfDay = new Date();
   startOfDay.setUTCHours(0, 0, 0, 0);
@@ -71,12 +101,15 @@ async function usageSummary() {
     .select("total_watts")
     .gte("logged_at", startOfDay.toISOString());
   // each log point represents prior 60s at that wattage → watt-seconds/3.6M = kWh
-  const wattSeconds = (logs ?? []).reduce((s, l) => s + Number(l.total_watts) * 60, 0);
+  const wattSeconds = ((logs ?? []) as PowerLogRow[]).reduce(
+    (s: number, l: PowerLogRow) => s + Number(l.total_watts) * 60,
+    0,
+  );
   const kwh = wattSeconds / 3_600_000;
   return `Total power right now: ${currentW}W. Today's estimated usage: ${kwh.toFixed(1)} kWh.`;
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method !== "POST") return new Response("Method not allowed", { status: 405 });
 
   const sig = req.headers.get("x-signature-ed25519");
@@ -91,7 +124,7 @@ Deno.serve(async (req) => {
   );
   if (!ok) return new Response("invalid request signature", { status: 401 });
 
-  const body = JSON.parse(raw);
+  const body = JSON.parse(raw) as InteractionBody;
 
   // PING
   if (body.type === 1) return json({ type: 1 });

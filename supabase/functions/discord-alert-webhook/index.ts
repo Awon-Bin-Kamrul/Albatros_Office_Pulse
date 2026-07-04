@@ -1,3 +1,5 @@
+/// <reference path="../global.d.ts" />
+
 // Posts formatted Office Pulse alerts to a Discord channel via webhook.
 // Triggered by a Postgres AFTER INSERT trigger on public.alerts using pg_net.
 
@@ -9,7 +11,7 @@ const prettyRoom = (r: string) =>
   : r === "work_room_2" ? "Work Room 2"
   : r;
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
   }
