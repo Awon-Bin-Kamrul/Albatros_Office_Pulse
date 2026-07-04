@@ -21,6 +21,12 @@ Watch our 3-minute demo video to see Office Pulse in action:
 🔗 Link to Office Pulse Demo Video 
 https://drive.google.com/drive/folders/1wwcdFNymNAJQDWpNSRzUPkFfk0mIvtV2
 
+Live Dashboard
+Experience the real-time monitoring interface here:
+🔗 Office Pulse Live Dashboard
+https://albatros-office-pulse.vercel.app/
+Our dashboard provides a centralized, responsive interface for tracking device states, analyzing energy consumption patterns, and managing office automation settings on the fly.
+
 
 Modern offices often suffer from significant energy waste due to lights, fans, and other devices being left on after hours or in unoccupied rooms. Office Pulse provides a smart, scalable solution to this problem. Our system remotely monitors office device status and power consumption in real-time, allowing for automated alerts and remote management.
 
