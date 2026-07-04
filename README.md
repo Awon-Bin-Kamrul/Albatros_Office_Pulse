@@ -57,7 +57,8 @@ The Office Pulse system is built on a robust, event-driven architecture that ens
 ## ⚙️ Hardware Simulation
 We use Wokwi for hardware validation, allowing us to simulate the physical setup without needing actual hardware.
 
-🔗 [Link to Wokwi Simulation: Office Pulse](https://wokwi.com/projects/468604243748749313)
+🔗 **Wokwi Simulation:** [Office Pulse Project](https://wokwi.com/projects/468604243748749313)
+📦 **Backup Source/Files:** [Project Backup Folder (Google Drive)](https://drive.google.com/drive/folders/1MtNTh0jh2V8P2gH7Qeypt9SnZce5L_Dn?usp=sharing)
 
 **Simulation Setup:**
 * **Microcontroller:** ESP32 DevKit V1
