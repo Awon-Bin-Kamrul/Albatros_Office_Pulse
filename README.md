@@ -68,22 +68,22 @@ Backend: Serverless PostgreSQL-based backend with real-time subscriptions.
 Frontend: React 19, TanStack Start (full-stack framework), Tailwind CSS.
 Database: PostgreSQL (with real-time subscriptions enabled).
 Alerts: Discord API (Edge functions trigger bot messages).
-👨‍💻 Team Members - Albatros
 
+
+👨‍💻 Team Members - Albatros
 
 Member Name: Awon Bin Kamrul (Leader)
 Role: Hardware & Wokwi Lead, GitHub Control & Versioning, Voice over
 Contact: awonbinkamrul0@gmail.com
 
 Member Name: Abdullah Al-Zahur Rafi
-Backend & Database Architect
-abdullah.alzahur.rafi@g.bracu.ac.bd
+Role: Backend & Database Architect
+Contact: abdullah.alzahur.rafi@g.bracu.ac.bd
 
 Member Name: Mahmudul Islam Sohan
-Frontend & UI/UX Lead
-mahmudul.islam.sohan@g.bracu.ac.bd
+Role: Frontend & UI/UX Lead
+Contact: mahmudul.islam.sohan@g.bracu.ac.bd
 
 📄 License
-
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.BRAC University | Presented for the Hackathon at Techathon Nationals & Rover Summit 2026, organized by the IUT Robotics Society 
